@@ -1,0 +1,12 @@
+@startuml
+
+    rectangle Node_1 
+    rectangle Node_2
+    rectangle Node_3
+    rectangle Node_n
+
+    Node_1 <-> Node_2
+    Node_2 <-> Node_3
+    Node_3 <.> Node_n : Diğer Node'lar
+
+@enduml

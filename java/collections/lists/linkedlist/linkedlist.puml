@@ -1,0 +1,4 @@
+@startuml
+    class LinkedList implements List 
+    class LinkedList implements Deque 
+@enduml

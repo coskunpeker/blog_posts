@@ -31,7 +31,7 @@ public class CopyOnWriteArrayList<E>
 
 ### CopyOnWriteArrayList Thread-Safety
 
-`CopyOnWriteArrayList` yukarıda da açıklandığı gibi `data manipulation (mutative operations)` işlemlemlerini, tanımı aşağıdaki gibi olan `internal-array'in` bir kopyasını oluşturup, kopyayı güncelleme yöntemi ile yapar.
+`CopyOnWriteArrayList` yukarıda da açıklandığı gibi `data manipulation (mutative operations)` işlemlerini, tanımı aşağıdaki gibi olan `internal-array'in` bir kopyasını oluşturup, kopyayı güncelleme yöntemi ile yapar.
 
 ```java
     private transient volatile Object[] array;

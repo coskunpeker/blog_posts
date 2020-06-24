@@ -1,6 +1,6 @@
 # CopyOnWriteArrayList
 
-`ArrayList'i` önceki yazımızda incelemiştik. Hatırlayacak olursanız `ArrayList'in thread-safe değildi.` Yani birden fazla `thread'in` bir `ArrayList` instance'ına erişmesi durumunda bu instance artık bu `thread'ler için shared-resource` olur ve bu durum da uygulamada beklenmedik sorunlar yaşanabilir.
+`ArrayList'i` önceki yazımızda incelemiştik. Hatırlayacak olursanız `ArrayList thread-safe değildir.` Yani birden fazla `thread'in` bir `ArrayList` instance'ına erişmesi durumunda bu instance artık bu `thread'ler için shared-resource` olur ve bu durum da uygulamada beklenmedik sorunlar yaşanabilir.
 
 Bu nedenle `List` veri yapısının, `java.util.concurrent.CopyOnWriteArrayList` altında tanımı aşağıdaki 
 gibi olan bir implementasyonu bulunmaktadır.

@@ -149,6 +149,7 @@ Bunu aşağıdaki kod bloğu ile incelemeye çalışalım:
 ```
 Yukarıda da görüleceği üzere `capacity` değeri otomatik olarak artırıldı. Bu iş için biz geliştiricilerin uğraşması gerekmiyor. Aslında, `ArrayList` zaten bunun için var. :smiley:
 
+---------------
 
 ### ArrayList Iteration Fail-Fast Durumu 
 
@@ -190,13 +191,14 @@ fırlatılmama ihtimali düşünülmelidir.
   
     }
 ```
-   
+
+---------------
     
 ### ArrayList Constructor Metodları   
 
 Üç tip `constructor` bulunmakta ve bunlar aşağıdaki gibi;
    
-Boş bir `ArrayList` instance'ı oluşurmak için kullanılan contructor:
+Boş bir `ArrayList` instance'ı oluşurmak için kullanılan constructor:
 
 ```java
     List<Integer> list = new ArrayList<>();
@@ -214,11 +216,13 @@ Bir başka `Collection'ın` elemanları ile instance oluşurmak için kullanıla
     list.forEach(System.out::println);
 ```
 
-Başlangıç kapasitesini vererek instance oluşurmak için kullanılan contructor:
+Başlangıç kapasitesini vererek instance oluşurmak için kullanılan constructor:
 
 ```java
     List<Integer> list = new ArrayList<>(20);
 ``` 
+
+---------------
 
 ### Arrays.asList(T... a) Metodu
 
@@ -256,6 +260,8 @@ Doğal olarak aşağıdaki `casting` işleminin sonucu da `ClassCastException'd�
 ```java
     ArrayList<String> list = (ArrayList<String>) Arrays.asList("a", "b", "c");
 ```
+
+---------------
 
 ### Kaynaklar
 

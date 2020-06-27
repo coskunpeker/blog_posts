@@ -29,6 +29,7 @@ Aşağıdaki görselde de görüldüğü gibi `LinkedList` hem `List` interface'
 * `LinkedList`, `data manipulation` için idealdir. (Data manipulation, eleman ekleme, çıkarma, güncelleme amlamına gelir). Bir `LinkedList'i` manipüle etmek görece bir `ArrayList'i` manipüle etmekten  `hızlıdır`. Çünkü memory üzerinde `shifting'e  ihtiyaç duyulmaz`.  
 
 * `LinkedList` bir `Deque` interface'ini implement eder, `Deque` ise `Queue` interface'ini implement eder. Bu yüzden bir `List` olduğu gibi aynı zamanda bir `Queue'dur.`
+---------------
 
 ### Doubly Linked List Özellikleri
 
@@ -59,6 +60,8 @@ Doğal olarak, akla `ilk node'un previous'u ve son node'un next'inin` ne olacağ
 
 > Not: `LinkedList` elamanlarının store edilmesi/saklanması tamamen her bir elamanın önceki ve sonraki elamanı referans olarak saklaması ile yönetilir. Bu durumda `ArrayList'deki` gibi bir `size` durumu söz konusu değildir. Yani `ArrayList` elemanlarını bir `internal array` ile store ederken/saklarken `LinkedList` elemanlar arası referanslar ile bu durumu yönetir. `Array'ler` memory'de art arda dizili olmalıdır. Bu yüzden `ArrayList'e` elaman ekleme çıkarma `shifting` gerektirirken, `LinkedList'de` `shifting` gerekmez.
 
+---------------
+
 ### Deque Özellikleri
 
 `Deque'nun`, açılımı `double ended queue'dur.` `Deque` kısaca `Queue/Kuyruk` veri yapısının hem `Queue/Kuyruk` başından hem de sonundan elaman ekleme çıkarma olanağı sunan implementasyonudur.
@@ -67,30 +70,23 @@ Doğal olarak, akla `ilk node'un previous'u ve son node'un next'inin` ne olacağ
 
 `LinkedList` de bir `Deque` implementasyonu olduğu için bize aşağıdaki metodlarla `Deque` özelliklerini sunuyor.
 
-#### addFirst Metodu
+| Metod     | Açıklama  |
+|-----------|-----------------------------------------------------------|
+| addFirst  | `LinkedList'in` ilk elamanı olarak verilen değeri ekler.  |
+| addLast   | `LinkedList'in` son elamanı olarak verilen değeri ekler.  |
+| pollFirst | `LinkedList'in` ilk elamanını siler ve o değeri return eder/döner.|
+| pollLast  | `LinkedList'in` son elamanı siler ve o değeri return eder/döner.  |
+|  pop      | `FIFO` yapısına uygun olarak, `LinkedList'e` eklenme sırasına göre, sırada bulunan ilk elemanı siler ve return eder/döner  |
 
-`LinkedList'in` ilk elamanı olarak verilen değeri ekler. 
-
-#### addLast Metodu
-
-`LinkedList'in` son elamanı olarak verilen değeri ekler. 
-
-#### pollFirst Metodu
-
-`LinkedList'in` ilk elamanını siler ve o değeri return eder/döner. 
-
-#### pollLast Metodu
-
-`LinkedList'in` son elamanı siler ve o değeri return eder/döner. 
-
-#### pop Metodu
-
-`FIFO` yapısına uygun olarak, `LinkedList'e` eklenme sırasına göre, sırada bulunan ilk elemanı siler ve return eder/döner.
+---------------
 
 > Not: Burada önemli olan nokta şu ki; bu metodlar, `LinkedList` bir `Queue` veya `Deque` olarak kullanıldığı durumlarda anlam kazanır.
 
+---------------
+
 > Not 2: `LinkedList` elemanları listenin başından ve sonundan silinip eklenebildiği için `LIFO` yapısına uygun olarak bir `Stack` gibi de kullanılabilir. Java halihazırda bir `Stack` implementasyonuna sahip ve bu implementasyona `java.util.Stack` ile ulaşılabilir. Bu class'ın `javadoc'unda` da ifade edildiği gibi `Deque, Stack'ten daha iyi bir Stack alternafi olacaktır`. :smiley:
 
+---------------
 
 ### LinkedList Constructor Metodları  
 
@@ -116,6 +112,8 @@ Bir başka `Collection'ın` elemanları ile instance oluşurmak için kullanıla
 
 > Not: Hatırlayacağımız üzere, `ArrayList'de` bu iki `constructor` ve artı olarak bir de `başlangıç size'ının` tanımlanabildiği bir `constructor` vardı. `LinkedList'de` ise böyle bir `constructor` yok, çünkü
 elamanlarını `array` bazlı tutmuyor ve bu nedenle bir `size` tanımına ihtiyaç duymuyor.
+
+---------------
 
 ### Kaynaklar
 

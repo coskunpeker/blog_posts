@@ -23,7 +23,7 @@ Ayrıntılarına implementasyonları incelerken değineceğiz.
 * Yukarıdaki duruma benzer şekilde bazı `Map` implementasyonları `null` key ve value'lere izin vermezler.
 
 * Bazı `Map metodları` `recursive traversal/özyinelemeli geçiş` uygularlar. Bu nedenle, map eğer
-`self-referential/kendi kendini elemanı olarak tutma` içeriyorsa metod `fırlatabilir`. En iyisi 
+`self-referential/kendi kendini elemanı olarak tutma` içeriyorsa metod exception`fırlatabilir`. En iyisi 
 böyle bir kodu hiç geliştirmemek :smiley:
 
 * `Mutable` objelerin `key` olarak kullanılması durumunda dikkatli olunmalıdır.

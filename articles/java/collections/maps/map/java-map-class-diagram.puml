@@ -1,0 +1,19 @@
+@startuml
+
+    interface Map
+    interface SortedMap
+    abstract class AbsractMap implements Map
+    class Hashtable implements Map
+    class HashMap extends AbsractMap
+    class LinkedHashMap extends HashMap
+    class TreeMap implements AbsractMap, SortedMap
+    class EnumMap extends AbsractMap
+    class WeakHashMap extends AbsractMap
+    class IdentityHashMap extends AbsractMap
+
+
+    interface ConcurrentMap extends Map
+    class ConcurrentHashMap extends AbsractMap implements ConcurrentMap
+    class ConcurrentSkipListMap extends AbsractMap implements ConcurrentMap
+    
+@enduml

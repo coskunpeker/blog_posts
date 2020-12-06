@@ -1,4 +1,4 @@
-package main.java.com.training.vector;
+package main.java.com.training.lists.vector;
 
 import java.util.List;
 import java.util.Vector;

@@ -1,4 +1,4 @@
-package main.java.com.training.copyonwritearraylist;
+package main.java.com.training.lists.copyonwritearraylist;
 
 import java.lang.reflect.Field;
 import java.util.concurrent.CopyOnWriteArrayList;

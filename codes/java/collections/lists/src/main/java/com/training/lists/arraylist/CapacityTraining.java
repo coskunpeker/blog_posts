@@ -1,4 +1,4 @@
-package main.java.com.training.arraylist;
+package main.java.com.training.lists.arraylist;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -41,6 +41,7 @@ public class CapacityTraining {
         // observe the add operation
         IntStream.range(0, 20)
                  .forEach(element -> {
+
                      list.add(element);
                      try {
                          System.out.print("added element: " + element);

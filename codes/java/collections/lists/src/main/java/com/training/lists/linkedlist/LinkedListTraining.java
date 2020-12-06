@@ -1,4 +1,4 @@
-package main.java.com.training.linkedlist;
+package main.java.com.training.lists.linkedlist;
 
 import java.util.HashSet;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package main.java.com.training.arraylist;
+package main.java.com.training.lists.arraylist;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;

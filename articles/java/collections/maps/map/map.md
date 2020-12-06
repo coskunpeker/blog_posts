@@ -53,3 +53,30 @@ map'i de etkiler ve `unmodifiable` kavramı ile bağdaşmaz. Bu noktada dikkatli
 Bu nedenle `identity-sensitive operation'larda( referans ile == işlemi gibi)` veya  `synchronization` 
 yapılacaksa bu map'lerin `kullanımından kaçınılmalıdır`.
 
+## Map İmplementasyonları
+ 
+![image](java-map-class-diagram.png)
+
+
+### General-Purpose/Genel-Amaçlı İmplementasyonlar
+
+* HashMap 
+* TreeMap
+* LinkedHashMap
+
+### Special-Purpose/Özel-Amaçlı İmplementasyonlar
+
+* EnumMap
+* WeakHashMap
+* IdentityHashMap
+
+### Concurrent/Eşzamanlı İmplementasyonlar
+
+* ConcurrentHashMap 
+* ConcurrentSkipListMap 
+
+ ### Kaynaklar
+ 
+* https://docs.oracle.com/javase/tutorial/collections/implementations/map.html 
+
+* https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Map.html

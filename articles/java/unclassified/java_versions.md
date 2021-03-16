@@ -1,5 +1,5 @@
 
-# Java Versiyon Stratejisi
+# Java Versiyonları ile Gelen Özellikler
 
 Oracle, Java 9 ile birlikte versiyonlama stratejisini değiştirdi. Artık her bir versiyon `LTS (Long-Term-Support)` veya `Non-LTS` olmak üzere ikiye ayrılıyor. `LTS` olarak adlandırlan versiyonlar `her 3 yılda bir`, Non-LTS sürümler ise her `6 ayda bir` kullanıma sunuluyor. 
 
@@ -30,12 +30,45 @@ LTS ve Non-LTS sürümler arasındaki en büyük farklardan birisi ise bir Non-L
 * Interface'lerde Default ve Static metodlar
 * Optionals
 * Datetime API
-* Concurrency iyileştirmeleri ve CompletableFuture
+* [Concurrency iyileştirmeleri ve CompletableFuture](https://www.baeldung.com/java-completablefuture)
 
 ### Java 9
 
-* [Module System (Project Jigsaw) ](https://www.journaldev.com/13106/java-9-modules)
+* [Module System (Project Jigsaw) ](http://tutorials.jenkov.com/java/modules.html)
 * List, Set, Map için Factory metodlar
+
+```java
+        
+        // doğru kullanım örnekleri 
+        List<String> list = List.of("item", "item1", "item3");
+        
+        int[] arr = { 1, 2, 3, 4, 5 };
+        List<int[]> list = List.of(arr);
+        
+        Set<String> set = Set.of("item", "item1", "item3");
+
+        Map<String, String> map = Map.of("1", "a", "2", "b", "3", "c");
+
+        // null elamanlara izin verilmez
+        List.of("a", "b", null); \\ hatalı kullanım, NullPointerException ile sonuçlanır.
+        Set.of("a", "b", null); \\ hatalı kullanım, NullPointerException ile sonuçlanır.
+        Map.of("1", "a", "2", "b", "3", null); \\ hatalı kullanım, NullPointerException ile sonuçlanır.        
+
+        // bu yöntemle üretilen instance'lar immutable'dır. Initialazation'dan
+        // sonra değerleri değişemez
+
+        //  UnsupportedOperationException      
+        List<String> list = List.of("a", "b");
+        list.set(0, "c");         
+        
+        //  UnsupportedOperationException 
+        Set<String> set = Set.of("a", "b");
+        set.add("c");
+
+        Map<String, String> map = Map.of("1", "a", "2", "b");
+        map.remove("1");
+```
+
 * JShell
 * Interface'lerde private metodlar
 
@@ -54,7 +87,7 @@ LTS ve Non-LTS sürümler arasındaki en büyük farklardan birisi ise bir Non-L
 ```
 
 * CompletableFuture API İyileştirmeleri (Timeout ve Delay)
-* Reactive Streams
+* [Reactive Streams](https://dzone.com/articles/what-are-reactive-streams-in-java)
 
 ### Java 10
 
@@ -79,7 +112,8 @@ LTS ve Non-LTS sürümler arasındaki en büyük farklardan birisi ise bir Non-L
         -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI -XX:+UseJVMCICompiler
 ```
 
-* [Application Class-Data Sharing (JEP 310)](https://www.journaldev.com/20395/java-10-features#application-class-data-sharing-jep-310) Bir java uygulaması çalıştırıldığından class'ların `JVM'e yüklenmesi` en önemli ve `maliyetli` aşamalardan biridir. Bu özellik `boot-time'ın kritik olduğu` uygulamalarda boot-time'ı aşağı çekmek için geliştirilmiştir. Bu yöntemdeki fikir farklı java process'leri tarafından ihtiyaç duyulan aynı class metadata'larını paylaşmak üzerine kuruludur.
+* [Application Class-Data Sharing (JEP 310)](https://www.journaldev.com/20395/java-10-features#application-class-data-sharing-jep-310) Bir java uygulaması çalıştırıldığından class'ların `JVM'e yüklenmesi` en önemli ve `maliyetli` aşamalardan biridir. Bu özellik `boot-time'ın kritik olduğu` uygulamalarda boot-time'ı aşağı çekmek için geliştirilmiştir. Bu yöntemdeki fikir farklı java process'leri tarafından ihtiyaç duyulan aynı class metadata'larını paylaşmak üzerine kuruludur. ([Ek Kaynak 1](https://www.baeldung.com/graal-java-jit-compiler))([Ek Kaynak 2](https://chrisseaton.com/truffleruby/jokerconf17/))
+([Ek Kaynak 3](https://www.baeldung.com/ahead-of-time-compilation))
 
 ### Java 11
 
@@ -191,13 +225,13 @@ LTS ve Non-LTS sürümler arasındaki en büyük farklardan birisi ise bir Non-L
 
 ```java
 
-        // java 12 öncesi
+        // java 14 öncesi
         if (obj instanceof String) {
             String s = (String) obj;
     
         }
 
-        // java 12
+        // java 14
         if (obj instanceof String s) {
             System.out.println(s);
         }
@@ -216,7 +250,7 @@ LTS ve Non-LTS sürümler arasındaki en büyük farklardan birisi ise bir Non-L
         // Cannot invoke "java.lang.Integer.toString()" because "test" is null
 ```
 
-* `Records` özelliği ile auto-generated consturctor, getter, equals, hashcode ve toSring gibi metodları barındıran `immutable` class'lar oluşturulabiliyor. Bu class'larda `immutability özellikleri gereği` setter metod yok. Ancak custom constuctor'lar veya başka görevleri icra eden metodlar eklenebilir.
+* `Records` özelliği ile auto-generated constructor, getter, equals, hashcode ve toSring gibi metodları barındıran `immutable` class'lar oluşturulabiliyor. Bu class'larda `immutability özellikleri gereği` setter metod yok. Ancak custom constuctor'lar veya başka görevleri icra eden metodlar eklenebilir.
 
 ```java
         public record Person (String name, String address) {
